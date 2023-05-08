@@ -5,7 +5,8 @@ public class Prompt
 
     public string GetRandomPrompt()
     {
-        
+        string duff = "bling";
+        return duff;
     }
 
     public void Initilize()

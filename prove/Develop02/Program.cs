@@ -13,7 +13,8 @@ class Program
         List<Entry> entries = journal.GetAllEntries();
         foreach (Entry e in entries)
         {
-            Console.WriteLine(e.convert_to_string());
+            string message = e.convert_to_string();
+            Console.WriteLine(message);
         }
     }
 }

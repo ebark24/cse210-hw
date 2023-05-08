@@ -2,6 +2,11 @@
 public class Journal
 {
     public List<Entry> _entries;
+
+    public Journal()
+    {
+        _entries = new List<Entry>();
+    }
     public List<Entry> GetAllEntries()
     {
         return this._entries;
