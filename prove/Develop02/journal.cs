@@ -11,11 +11,14 @@ public class Journal
     {
         return this._entries;
     }
-    public void AddEntry(Entry entry)
+
+    public void DisplayJournal()
     {
-        if (!_entries.Contains(entry))
+        foreach (Entry e in _entries)
         {
-            _entries.Add(entry);
+            string entry = e.convert_to_string();
+            Console.WriteLine(entry);
+            Console.WriteLine("");
         }
     }
 }
