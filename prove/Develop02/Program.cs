@@ -5,26 +5,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<string> prompts = new List<string>() {"What is the Best thing you did today?", "What is one thing you wish you could change about today?", "How did you see God's gand in your life today?", "What act of kindness did you preform today?", "What was the best conversation that you had today?", "Who was the person that had the most influence on you today?"};
-        ///Entry entry = new Entry();
-        ///Prompt prompt = new Prompt();
-        ///prompt._promptList = prompts;
+        List<string> prompts = new List<string>() {"What is the best thing you did today?", "What is one thing you wish you could change about today?", "How did you see God's hand in your life today?", "What act of kindness did you preform today?", "What was the best conversation that you had today?", "Who was the person that had the most influence on you today?"};
         var random = new Random();
-
-        
-        ///entry.hold("What is your name", "Eli Barker", "May 8th 2023");
-
         Journal journal = new Journal();
-        ///journal.AddEntry(entry);
-
         List<Entry> entries = journal.GetAllEntries();
-        foreach (Entry e in entries)
-        {
-            string message = e.convert_to_string();
-            Console.WriteLine(message);
-        }
-
-
 
         int UserNumber = 12;
 
@@ -48,6 +32,8 @@ class Program
                 entry._date = dateText;
                 Console.WriteLine(entry._prompt);
                 entry._response = Console.ReadLine();
+                Console.WriteLine("Out of 10 what would you rate today?");
+                entry._rating = Console.ReadLine();
                 journal._entries.Add(entry);
             }
 
@@ -66,8 +52,9 @@ class Program
                     Entry entry = new Entry();
                     string[] parts = line.Split("-");
                     entry._date = parts [0];
-                    entry._prompt = parts [1];
-                    entry._response = parts [2];
+                    entry._rating = parts [1];
+                    entry._prompt = parts [2];
+                    entry._response = parts [3];
                     journal._entries.Add(entry);
 
                 }
@@ -83,12 +70,11 @@ class Program
                     foreach (Entry e in entries)
                     {
                         
-                        outputFile.WriteLine($"{e._date}-{e._prompt}-{e._response}");
+                        outputFile.WriteLine($"{e._date}-{e._rating}-{e._prompt}-{e._response}");
                     }
 
                 }
-                
-            }
+            }                         
         }
                     
     }
