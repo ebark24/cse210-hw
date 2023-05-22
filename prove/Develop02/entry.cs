@@ -6,7 +6,7 @@ public class Entry
 {
     public string _response = "";
     public string _prompt = "";
-    public string _date = "";
+    public string _date = ""; 
     public string _rating = "";
 
     public string convert_to_string()
