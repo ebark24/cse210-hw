@@ -1,14 +1,31 @@
 public class Verse
 {
-    private List<Word> _words;
-    private string _verse = "";
+    public List<Word> _words = new List<Word>();
+    public string _verse = "";
 
-    public string ConvertToString()
+    public void ConvertToVerse()
     {
-        foreach (Word word in _words)
+        foreach (Word w in _words)
         {
-            _verse += $" {word}";
+            string _wods = w._word;
+            _verse += $" {_wods}";
         }
-        return _verse;
     }
+    public void ConvertToWords(string _verse)
+    {
+        List<string> _ListOfWords = new List<string>(_verse.Split(" "));
+        Word _word1 = new Word();
+        _words.Add(_word1);
+        foreach (string w in _ListOfWords)
+        {
+            _word1.SetWord(w);
+            _words.Add(_word1);
+        }
+    }
+
+    public void DisplayVerse()
+    {
+        Console.WriteLine(_verse);
+    }
+
 }
