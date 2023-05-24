@@ -5,15 +5,16 @@ public class Verse
 
     public void ConvertToVerse()
     {
+        _verse = " ";
         foreach (Word w in _words)
         {
-            string _wods = w.GetWord();
-            _verse += $" {_wods}";
+            string word = w.GetWord();
+            _verse += $" {word}";
         }
     }
-    public void ConvertToWords(string _v)
+    public void ConvertToWords()
     {
-        List<string> _ListOfWords = new List<string>(_v.Split(" "));
+        List<string> _ListOfWords = _verse.Split(" ").ToList();
         foreach (string w in _ListOfWords)
         {
             Word _word1 = new Word();
@@ -21,10 +22,27 @@ public class Verse
             _words.Add(_word1);
         }
     }
-
-    public void DisplayVerse()
+    public void RandomBlanks()
     {
-        Console.WriteLine(_verse);
+        for (int i=0; i<3; i++)
+        {
+            Random rnd = new Random();
+            int randIndex = rnd.Next(_words.Count);
+            Word randomWord = _words[randIndex];
+            string Ranword = randomWord.GetWord();
+            randomWord.Change_To_Blank();
+        }
+
+    }
+
+    public void SetVerse(string verse)
+    {
+        _verse = verse;
+    }
+
+    public string GetVerse()
+    {
+        return _verse;
     }
 
 }

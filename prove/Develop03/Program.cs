@@ -11,10 +11,11 @@ class Program
         string Final_ref = Ref1.getRefrence();
         Console.WriteLine(Final_ref);
 
-        Verse verse1 = new Verse();
-        verse1.ConvertToWords("I like to eat");
-        verse1.ConvertToVerse();
-        verse1.DisplayVerse();
+        Scriputre scriputre1 = new Scriputre();
 
+        scriputre1.SetScripture("Alma","2","2-5","I like it when I can make pancakes in the morning");
+        scriputre1.DisplayScripture();
+        scriputre1.MakeMultipleBlanks();
+        scriputre1.DisplayScripture();
     }
 }
