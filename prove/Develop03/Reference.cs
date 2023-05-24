@@ -5,23 +5,23 @@ public class Reference
     private string _chapterNumber = "";
     private string _verseNumber = "";
 
-    public void setBook(string book)
+    public void SetBook(string book)
     {
         _book = book;
     }
 
-    public void setVerseNumber(string verse)
+    public void SetVerseNumber(string verse)
     {
         _verseNumber = verse;
     }
 
-        public void setChapterNumber(string chapterNumber)
+        public void SetChapterNumber(string chapterNumber)
     {
         _chapterNumber = chapterNumber;
     }
 
 
-    public string getRefrence()
+    public string GetRefrence()
     {
         return _book + " " + _chapterNumber + ":"  + _verseNumber;
     }

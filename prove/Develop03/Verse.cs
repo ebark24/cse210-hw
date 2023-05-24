@@ -24,7 +24,8 @@ public class Verse
     }
     public void RandomBlanks()
     {
-        for (int i=0; i<3; i++)
+        int WordsToBeChanged = 3;
+        for (int i=0; i<WordsToBeChanged; i++)
         {
             Random rnd = new Random();
             int randIndex = rnd.Next(_words.Count);

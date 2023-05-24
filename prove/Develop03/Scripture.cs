@@ -5,9 +5,9 @@ public class Scriputre
 
     public void SetScripture(string book, string chapternumber, string versenumber, string verse)
     {
-            _refrence.setBook(book);
-            _refrence.setChapterNumber(chapternumber);
-            _refrence.setVerseNumber(versenumber);
+            _refrence.SetBook(book);
+            _refrence.SetChapterNumber(chapternumber);
+            _refrence.SetVerseNumber(versenumber);
 
             _verse.SetVerse(verse);
             _verse.ConvertToWords();
@@ -15,7 +15,7 @@ public class Scriputre
 
     public void DisplayScripture()
     {
-        Console.WriteLine($"{_refrence.getRefrence()} {_verse.GetVerse()}");
+        Console.WriteLine($"{_refrence.GetRefrence()} {_verse.GetVerse()}");
     }
     public void MakeMultipleBlanks()
     {

@@ -18,7 +18,12 @@ public class Word
     }
     public string Change_To_Blank()
     {
-        _word = "_";
+        int letters = _word.Count();
+        _word = "";
+        for (int i=0; i<letters; i++)
+        {
+            _word += "_";
+        }
         return _word;
     }
 }
