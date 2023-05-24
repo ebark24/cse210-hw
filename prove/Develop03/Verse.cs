@@ -3,6 +3,7 @@ public class Verse
     private List<Word> _words = new List<Word>();
     private string _verse = "";
 
+
     public void ConvertToVerse()
     {
         _verse = " ";
@@ -31,7 +32,14 @@ public class Verse
             int randIndex = rnd.Next(_words.Count);
             Word randomWord = _words[randIndex];
             string Ranword = randomWord.GetWord();
-            randomWord.Change_To_Blank();
+            if (Ranword.Contains("_"))
+            {
+                WordsToBeChanged += 1;
+            }
+            else  
+            {
+                randomWord.Change_To_Blank();
+            }
         }
 
     }
