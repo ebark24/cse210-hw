@@ -1,10 +1,15 @@
 public class Word
 {
-    public string _word = "";
+    private string _word = "";
 
     public string ConvertToString()
     {
         return this._word;
+    }
+
+    public string GetWord()
+    {
+        return _word;
     }
 
     public void SetWord(string word)
