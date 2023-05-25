@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         fraction fraction1 = new fraction();
-        string frac1 = fraction1.GetFraction();
+        string frac1 = fraction1.GetFraction(); 
         double deci1 = fraction1.GetDecimalValue();
         Console.WriteLine(frac1);
         Console.WriteLine(deci1);

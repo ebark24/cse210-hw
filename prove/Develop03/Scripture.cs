@@ -1,14 +1,18 @@
 public class Scriputre
 {
     private Verse _verse = new Verse();
-    private Reference _refrence = new Reference();
+    private Reference _refrence;
 
-    public void SetScripture(string book, string chapternumber, string versenumber, string verse)
+    public Scriputre(string book, string chapternumber, string verseNumber, string verse)
     {
-            _refrence.SetBook(book);
-            _refrence.SetChapterNumber(chapternumber);
-            _refrence.SetVerseNumber(versenumber);
+            _refrence = new Reference(book, chapternumber,verseNumber);
+            _verse.SetVerse(verse);
+            _verse.ConvertToWords();
+    }
 
+    public Scriputre(string book, string chapternumber, string startVerseNumber, string endVerseNumber, string verse)
+    {
+            _refrence = new Reference(book, chapternumber,startVerseNumber,endVerseNumber);
             _verse.SetVerse(verse);
             _verse.ConvertToWords();
     }

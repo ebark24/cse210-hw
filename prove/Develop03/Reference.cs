@@ -5,6 +5,19 @@ public class Reference
     private string _chapterNumber = "";
     private string _verseNumber = "";
 
+    public Reference(string book,string chapterNumber, string verse)
+    {
+        _book = book;
+        _chapterNumber = chapterNumber;
+        _verseNumber = verse;
+    }
+    public Reference(string book,string chapterNumber, string beginingVerse, string endingVerse)
+    {
+        _book = book;
+        _chapterNumber = chapterNumber;
+        _verseNumber = $"{beginingVerse}-{endingVerse}";
+    }
+
     public void SetBook(string book)
     {
         _book = book;
@@ -22,7 +35,7 @@ public class Reference
     }
 
 
-    public string GetRefrence() // 2BytheWayIThinkMattManleyIsTheWorstTeacherEver.HeIsAJerk!6
+    public string GetRefrence()
     {
         return _book + " " + _chapterNumber + ":"  + _verseNumber;
     }
