@@ -1,6 +1,8 @@
 public class Verse
 {
     private List<Word> _words = new List<Word>();
+
+    private List<Word> _wordsToBeChanged = new List<Word>();
     private string _verse = "";
 
 
@@ -21,29 +23,35 @@ public class Verse
             Word _word1 = new Word();
             _word1.SetWord(w);
             _words.Add(_word1);
+            _wordsToBeChanged.Add(_word1);
         }
     }
     public void RandomBlanks()
     {
-        int WordsToBeChanged = 3;
-        for (int i=0; i<WordsToBeChanged; i++)
+        int WordsToBeChanged = _wordsToBeChanged.Count();
+        int ChangeWords = 3;
+        if (WordsToBeChanged < 3)
+            {
+                ChangeWords = WordsToBeChanged;
+            }
+        
+        for (int i=0; i<ChangeWords; i++)
         {
             Random rnd = new Random();
-            int randIndex = rnd.Next(_words.Count);
-            Word randomWord = _words[randIndex];
+            int randIndex = rnd.Next(_wordsToBeChanged.Count);
+            Word randomWord = _wordsToBeChanged[randIndex];
             string Ranword = randomWord.GetWord();
-            if (Ranword.Contains("_"))
-            {
-                WordsToBeChanged += 1;
-            }
-            else  
-            {
-                randomWord.Change_To_Blank();
-            }
+            randomWord.Change_To_Blank();
+            _wordsToBeChanged.Remove(randomWord);
         }
 
     }
 
+    public int GetWordsToBeChangedCount()
+    {
+        int WordsCount = _wordsToBeChanged.Count();
+        return WordsCount;
+    }
     public void SetVerse(string verse)
     {
         _verse = verse;

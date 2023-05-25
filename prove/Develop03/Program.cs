@@ -15,12 +15,20 @@ class Program
 
         while (UserInput != "Quit")
         {
-            UserInput = Console.ReadLine();
-            Console.Clear();
-            scriputre1.MakeMultipleBlanks();
-            scriputre1.DisplayScripture();
-            Console.WriteLine("");
-            Console.WriteLine("Press Enter to continue or type 'Quit' to finish");
+            int WordsLeftToBeChanged = scriputre1.GetWordsToBeChangedCount();
+            if (WordsLeftToBeChanged > 0)
+            {
+                UserInput = Console.ReadLine();
+                Console.Clear();
+                scriputre1.MakeMultipleBlanks();
+                scriputre1.DisplayScripture();
+                Console.WriteLine("");
+                Console.WriteLine("Press Enter to continue or type 'Quit' to finish");
+            }
+            else
+            {
+                UserInput = "Quit";
+            }
 
         }
     }

@@ -13,6 +13,12 @@ public class Scriputre
             _verse.ConvertToWords();
     }
 
+    public int GetWordsToBeChangedCount()
+    {
+        int WordsCount = _verse.GetWordsToBeChangedCount();
+        return WordsCount;
+    }
+
     public void DisplayScripture()
     {
         Console.WriteLine($"{_refrence.GetRefrence()} {_verse.GetVerse()}");

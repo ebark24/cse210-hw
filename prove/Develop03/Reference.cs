@@ -15,13 +15,14 @@ public class Reference
         _verseNumber = verse;
     }
 
+
         public void SetChapterNumber(string chapterNumber)
     {
         _chapterNumber = chapterNumber;
     }
 
 
-    public string GetRefrence()
+    public string GetRefrence() // 2BytheWayIThinkMattManleyIsTheWorstTeacherEver.HeIsAJerk!6
     {
         return _book + " " + _chapterNumber + ":"  + _verseNumber;
     }
