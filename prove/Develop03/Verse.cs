@@ -9,7 +9,7 @@ public class Verse
     public void ConvertToVerse()
     {
         _verse = " ";
-        foreach (Word w in _words)
+        foreach (Word w in _words) 
         {
             string word = w.GetWord();
             _verse += $" {word}";

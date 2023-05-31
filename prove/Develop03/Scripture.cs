@@ -7,7 +7,7 @@ public class Scriputre
     {
             _refrence = new Reference(book, chapternumber,verseNumber);
             _verse.SetVerse(verse);
-            _verse.ConvertToWords();
+            _verse.ConvertToWords(); 
     }
 
     public Scriputre(string book, string chapternumber, string startVerseNumber, string endVerseNumber, string verse)

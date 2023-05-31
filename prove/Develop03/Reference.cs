@@ -3,7 +3,7 @@ public class Reference
     private string _book = "";
 
     private string _chapterNumber = "";
-    private string _verseNumber = "";
+    private string _verseNumber = ""; 
 
     public Reference(string book,string chapterNumber, string verse)
     {

@@ -2,7 +2,7 @@ using System;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main(string[] args) 
     {
         List<Scriputre> SctiptureList = new List<Scriputre>();
         Scriputre scriputre1 = new Scriputre("2 Nephi","2","27","Wherefore, men are free according to the flesh; and all things are given them which are expedient unto man. And they are free to choose liberty and eternal life, through the great Mediator of all men, or to choose captivity and death, according to the captivity and power of the devil; for he seeketh that all men might be miserable like unto himself.");

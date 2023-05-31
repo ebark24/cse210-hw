@@ -2,7 +2,7 @@ public class Activity
 {
     private string _activityName = "";
     private string _activityDiscription = "";
-    private int _activityDuration = 3;
+    private int _activityDuration = 6;
 
     public Activity(string ActivityName, string ActivityDiscription)
     {

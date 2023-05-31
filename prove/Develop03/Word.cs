@@ -9,7 +9,7 @@ public class Word
 
     public string GetWord()
     {
-        return _word;
+        return _word; 
     }
 
     public void SetWord(string word)
