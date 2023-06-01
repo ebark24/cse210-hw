@@ -4,11 +4,6 @@ public class Activity
     private string _activityDiscription = "";
     private int _activityDuration = 6;
 
-    public Activity(string ActivityName, string ActivityDiscription)
-    {
-        _activityName = ActivityName;
-        _activityDiscription = ActivityDiscription;
-    }
 
     public void DisplayOpeningMessage()
     {
@@ -22,6 +17,11 @@ public class Activity
         int Userinput = int.Parse(Console.ReadLine());
         _activityDuration = Userinput;
         Console.WriteLine(_activityDuration);
+    }
+
+    public int GetUserDuration()
+    {
+        return _activityDuration;
     }
 
     public void DispalyClosingMessage()
