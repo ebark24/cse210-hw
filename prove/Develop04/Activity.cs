@@ -11,12 +11,22 @@ public class Activity
         Console.WriteLine(_activityDiscription);
     }
 
+    public void SetActivityName(string activityName)
+    {
+        _activityName = activityName;
+    }
+
+    
+    public void SetActivityDiscription(string activityDiscription)
+    {
+        _activityDiscription = activityDiscription;
+    }
+
     public void SetUserDuration()
     {
         Console.WriteLine($"\nHow long, in seconds, would you like for your session");
         int Userinput = int.Parse(Console.ReadLine());
         _activityDuration = Userinput;
-        Console.WriteLine(_activityDuration);
     }
 
     public int GetUserDuration()
@@ -24,9 +34,26 @@ public class Activity
         return _activityDuration;
     }
 
+    public void DisplayWaitingAnimation()
+    {
+        Console.Clear();
+        Console.Write("Geting Ready |");
+
+        for (int i = 0; i <3; i++)
+        {
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+            Console.Write("-");
+
+            Thread.Sleep(500);
+            Console.Write("\b \b");
+            Console.Write("|");
+        }  
+    }
+
     public void DispalyClosingMessage()
     {
-        Console.WriteLine("Well Done\n");
+
         Console.WriteLine($"You have completed a {_activityName} for {_activityDuration}");
     }
 }
