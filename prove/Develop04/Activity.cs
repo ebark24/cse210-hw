@@ -3,6 +3,8 @@ public class Activity
     private string _activityName = "";
     private string _activityDiscription = "";
     private int _activityDuration = 6;
+    private DateTime _startTime = DateTime.Now;
+    private DateTime _futureTime;
 
 
     public void DisplayOpeningMessage()
@@ -20,6 +22,21 @@ public class Activity
     public void SetActivityDiscription(string activityDiscription)
     {
         _activityDiscription = activityDiscription;
+    }
+
+    public DateTime GetStartTime()
+    {
+        return _startTime;
+    }
+
+    public void SetFutureTime()
+    {
+        _futureTime = _startTime.AddSeconds(_activityDuration);
+    }
+
+    public DateTime GetFutureTime()
+    {
+        return _futureTime;
     }
 
     public void SetUserDuration()

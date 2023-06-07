@@ -9,5 +9,6 @@ class Program
         breathingActivity.DisplayOpeningMessage();
         breathingActivity.SetUserDuration();
         breathingActivity.DisplayWaitingAnimation();
+        breathingActivity.DisplayActivity();
     }
 }

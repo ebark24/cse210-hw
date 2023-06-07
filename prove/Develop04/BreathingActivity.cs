@@ -7,6 +7,14 @@ public class BreathingActivity : Activity
     }
     public void DisplayActivity()
     {
+        SetFutureTime();
+        DateTime Start = GetStartTime();
+        DateTime End = GetFutureTime();
+        while (Start < End)
+        {
+            Start = DateTime.Now;
+            Console.WriteLine("I like to eat pancakes");
+        }
 
     }
 

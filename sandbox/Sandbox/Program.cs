@@ -4,11 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        string verse = "I like to read the scriptures";
-        List<string> word = new List<string>(verse.Split(" "));
-        foreach (string w in word)
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(5);
+
+        Thread.Sleep(3000);
+
+        DateTime currentTime = DateTime.Now;
+        if (currentTime < futureTime)
         {
-            Console.WriteLine(w);
+            Console.WriteLine("We have not arrived at our future time yet...");
         }
     }
 }
