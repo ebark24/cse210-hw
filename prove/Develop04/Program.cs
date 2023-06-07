@@ -8,7 +8,9 @@ class Program
         breathingActivity.SetNameAndDescription();
         breathingActivity.DisplayOpeningMessage();
         breathingActivity.SetUserDuration();
-        breathingActivity.DisplayWaitingAnimation();
+        breathingActivity.DisplayOpeningAnimation();
         breathingActivity.DisplayActivity();
+        breathingActivity.DisplayClosingAnimation();
+        breathingActivity.DispalyClosingMessage();
     }
 }

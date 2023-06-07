@@ -3,8 +3,6 @@ public class Activity
     private string _activityName = "";
     private string _activityDiscription = "";
     private int _activityDuration = 6;
-    private DateTime _startTime = DateTime.Now;
-    private DateTime _futureTime;
 
 
     public void DisplayOpeningMessage()
@@ -24,20 +22,6 @@ public class Activity
         _activityDiscription = activityDiscription;
     }
 
-    public DateTime GetStartTime()
-    {
-        return _startTime;
-    }
-
-    public void SetFutureTime()
-    {
-        _futureTime = _startTime.AddSeconds(_activityDuration);
-    }
-
-    public DateTime GetFutureTime()
-    {
-        return _futureTime;
-    }
 
     public void SetUserDuration()
     {
@@ -51,10 +35,21 @@ public class Activity
         return _activityDuration;
     }
 
-    public void DisplayWaitingAnimation()
+    public void DisplayOpeningAnimation()
     {
         Console.Clear();
         Console.Write("Geting Ready |");
+        DisplayWaitingAnimation();
+    }
+
+    public void DisplayClosingAnimation()
+    {
+        Console.Write("Well Done! |");
+        DisplayWaitingAnimation();
+    }
+
+    public void DisplayWaitingAnimation()
+    {
 
         for (int i = 0; i <3; i++)
         {
@@ -70,7 +65,7 @@ public class Activity
 
     public void DispalyClosingMessage()
     {
-
-        Console.WriteLine($"You have completed a {_activityName} for {_activityDuration}");
+        Console.WriteLine("");
+        Console.WriteLine($"You have completed a {_activityName} for {_activityDuration} seconds");
     }
 }

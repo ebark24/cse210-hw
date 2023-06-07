@@ -5,15 +5,43 @@ public class BreathingActivity : Activity
         SetActivityName("Breathing Activity");
         SetActivityDiscription("This activity will help you relax by walking you through breathing in and out slowly. Claer your mind and focus on your breathing");
     }
+
+    public void BreathingIn()
+    {
+        Console.WriteLine("");
+        Console.WriteLine("Breathe in...");
+    }
+
+    public void Countdown()
+    {
+        Console.Write("3");
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+        Console.Write("2");
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+        Console.Write("1");
+        Thread.Sleep(1000);
+        Console.Write("\b \b");
+        Console.Write("");
+    }
+
+    public void BreathingOut()
+    {
+        Console.WriteLine("");
+        Console.WriteLine("Now breathe out...");
+    }
     public void DisplayActivity()
     {
-        SetFutureTime();
-        DateTime Start = GetStartTime();
-        DateTime End = GetFutureTime();
+        DateTime Start = DateTime.Now;
+        DateTime End = Start.AddSeconds(GetUserDuration());
         while (Start < End)
         {
             Start = DateTime.Now;
-            Console.WriteLine("I like to eat pancakes");
+            BreathingIn();
+            Countdown();
+            BreathingOut();
+            Countdown();
         }
 
     }
