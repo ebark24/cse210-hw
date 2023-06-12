@@ -47,6 +47,17 @@ class Program
 
             if (Userinput == "3")
             {
+                Console.Clear();
+                ListingActivity listingActivity = new ListingActivity();
+                listingActivity.SetNameAndDescription();
+                listingActivity.DisplayOpeningMessage();
+                listingActivity.SetUserDuration();
+                listingActivity.DisplayOpeningAnimation();
+                listingActivity.DisplayActivity();
+                listingActivity.DisplayClosingAnimation();
+                listingActivity.DispalyClosingMessage();
+                listingActivity.DisplayWaitingAnimation();
+                Console.Clear();
 
             }
 
