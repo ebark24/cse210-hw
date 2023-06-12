@@ -3,7 +3,7 @@ public class BreathingActivity : Activity
     public void SetNameAndDescription()
     {
         SetActivityName("Breathing Activity");
-        SetActivityDiscription("This activity will help you relax by walking you through breathing in and out slowly. Claer your mind and focus on your breathing");
+        SetActivityDiscription("This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing");
     }
 
     public void BreathingIn()
@@ -35,13 +35,13 @@ public class BreathingActivity : Activity
     {
         DateTime Start = DateTime.Now;
         DateTime End = Start.AddSeconds(GetUserDuration());
-        while (Start < End)
+        while (Start <= End)
         {
-            Start = DateTime.Now;
             BreathingIn();
             Countdown();
             BreathingOut();
             Countdown();
+            Start = DateTime.Now;
         }
 
     }

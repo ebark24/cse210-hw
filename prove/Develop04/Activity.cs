@@ -51,7 +51,7 @@ public class Activity
     public void DisplayWaitingAnimation()
     {
 
-        for (int i = 0; i <3; i++)
+        for (int i = 0; i <5; i++)
         {
             Thread.Sleep(500);
             Console.Write("\b \b");
@@ -60,7 +60,8 @@ public class Activity
             Thread.Sleep(500);
             Console.Write("\b \b");
             Console.Write("|");
-        }  
+        } 
+        Console.Write("\b \b"); 
     }
 
     public void DispalyClosingMessage()
