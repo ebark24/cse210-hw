@@ -5,13 +5,14 @@ class Program
     static void Main(string[] args)
     {
         string Userinput = "0";
-        while (Userinput != "4")
+        while (Userinput != "5")
         {
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1.Start Breathing Activity");
             Console.WriteLine("2.Start Reflection Activity");
             Console.WriteLine("3.Start Listing Activity");
-            Console.WriteLine("4.Quit");
+            Console.WriteLine("4.Start Imagination Activity");
+            Console.WriteLine("5.Quit");
             Console.WriteLine("Select a choice from the menu:");
             Userinput = Console.ReadLine();
 
@@ -58,7 +59,21 @@ class Program
                 listingActivity.DispalyClosingMessage();
                 listingActivity.DisplayWaitingAnimation();
                 Console.Clear();
+            }
 
+            if (Userinput == "4")
+            {
+                Console.Clear();
+                ImaginationActivity imaginationActivityy = new ImaginationActivity();
+                imaginationActivityy.SetNameAndDescription();
+                imaginationActivityy.DisplayOpeningMessage();
+                imaginationActivityy.SetUserDuration();
+                imaginationActivityy.DisplayOpeningAnimation();
+                imaginationActivityy.DisplayActivity();
+                imaginationActivityy.DisplayClosingAnimation();
+                imaginationActivityy.DispalyClosingMessage();
+                imaginationActivityy.DisplayWaitingAnimation();
+                Console.Clear();
             }
 
         }

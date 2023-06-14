@@ -4,7 +4,6 @@ public class Activity
     private string _activityDiscription = "";
     private int _activityDuration = 6;
 
-
     public void DisplayOpeningMessage()
     {
         Console.WriteLine($"Welcome to {_activityName}\n");
@@ -69,4 +68,5 @@ public class Activity
         Console.WriteLine("");
         Console.WriteLine($"You have completed a {_activityName} for {_activityDuration} seconds");
     }
+
 }

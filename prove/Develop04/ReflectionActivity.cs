@@ -42,15 +42,16 @@ public class ReflectionActivity : Activity
 
     public void DisplayActivity()
     {
-        DateTime Start = DateTime.Now;
-        DateTime End = Start.AddSeconds(GetUserDuration());
         Console.WriteLine("");
         Console.WriteLine("Consider the following prompt:");
         DisplayRandomPrompt();
-        DisplayWaitingAnimation();
-        
+        Console.WriteLine("When you have somthing in mind press enter");
+        Console.ReadLine();
         Console.WriteLine("Now consider the follwoing questions:");
         DisplayWaitingAnimation();
+
+        DateTime Start = DateTime.Now;
+        DateTime End = Start.AddSeconds(GetUserDuration());
 
         while (Start <= End)
         {
