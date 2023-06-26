@@ -70,8 +70,10 @@ public abstract class Goal
     public virtual void DisplayGoal()
     {}
 
-    public virtual void AccomplishTask()
-    {}
+    public virtual int AccomplishTask()
+    {
+        return 0;
+    }
 
 
 

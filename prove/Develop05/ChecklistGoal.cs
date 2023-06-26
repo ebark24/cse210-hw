@@ -44,9 +44,16 @@ public class ChecklistGoal : Goal
         return _timesAccomplished;
     }
 
-    public override void AccomplishTask()
+    public override int AccomplishTask()
     {
         _timesAccomplished += 1;
+        int PointsEarned = GetPoints();
+        if (_timesAccomplished >= _timesToBeCompleted)
+        {
+            PointsEarned += GetBonusPoints();
+        }
+        return PointsEarned;
+
     }
 
     public override void DisplayGoal()
@@ -60,8 +67,7 @@ public class ChecklistGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        string representation = $"ChecklistGoal:{GetCheckBox()},{GetName()},{GetDescription()},{GetPoints()},{_bonusPoints},{_timesToBeCompleted},{_timesAccomplished}";
+        string representation = $"ChecklistGoal:{GetCheckBox()}|{GetName()}|{GetDescription()}|{GetPoints()}|{_bonusPoints}|{_timesToBeCompleted}|{_timesAccomplished}";
         return representation;
     }
-
 }

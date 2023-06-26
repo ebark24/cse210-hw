@@ -9,14 +9,15 @@ public class SimpleGoal : Goal
         Console.WriteLine($"{GetCheckBox()} {GetName()} ({GetDescription()})");
     }
 
-    public override void AccomplishTask()
+    public override int AccomplishTask()
     {
         Checkbox();
+        return GetPoints();
     }
 
     public override string GetStringRepresentation()
     {
-        string representation = $"SimpleGoal:{GetCheckBox()},{GetName()},{GetDescription()},{GetPoints()}";
+        string representation = $"SimpleGoal|{GetCheckBox()}|{GetName()}|{GetDescription()}|{GetPoints()}";
         return representation;
     }
 }

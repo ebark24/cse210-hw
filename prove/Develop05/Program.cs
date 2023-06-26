@@ -78,8 +78,6 @@ class Program
                         outputFile.WriteLine(goal.GetStringRepresentation());
                     }
                 }
-
-
             }
 
             else if (UserInput == "4")
@@ -89,13 +87,22 @@ class Program
 
             else if (UserInput == "5")
             {
-                foreach(Goal goal in Goals)
+                Console.WriteLine("");
+                for(int i = 0; i < Goals.Count(); i++)
                 {
-                    goal.AccomplishTask();
-                    goal.DisplayGoal();
+                    Console.WriteLine($"{i+1}. {Goals[i].GetName()}");
                 }
-            }
-        }
 
+                Console.WriteLine("Which goal did you accomplish?");
+                int GoalAccomplished = int.Parse(Console.ReadLine()) - 1 ;
+                int PointsEarned = Goals[GoalAccomplished].AccomplishTask();
+                Console.WriteLine($"Congratulations you earned {PointsEarned} points");
+                TotalPoints += PointsEarned;
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine($"You have {TotalPoints} points");
+            Console.WriteLine("");
+        }
     }
 }
