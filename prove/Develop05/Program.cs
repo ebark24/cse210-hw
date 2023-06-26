@@ -1,5 +1,5 @@
 using System;
-
+using System.IO;
 class Program
 {
     static void Main(string[] args)
@@ -68,6 +68,17 @@ class Program
 
             else if (UserInput == "3")
             {
+                Console.WriteLine("What is the name for the goal file?");
+                string filename = Console.ReadLine();
+                using (StreamWriter outputFile = new StreamWriter(filename))
+                {
+                    outputFile.WriteLine(TotalPoints);
+                    foreach (Goal goal in Goals)
+                    {
+                        outputFile.WriteLine(goal.GetStringRepresentation());
+                    }
+                }
+
 
             }
 

@@ -12,6 +12,13 @@ public class ChecklistGoal : Goal
         SetTimesToBeCompleted(TimesToBeCompleted);
     }
 
+    public ChecklistGoal(string name, string description, int points, int BonusPoints, int TimesToBeCompleted, int TimesAccomplished) : base(name, description, points)
+    {
+        SetBonusPoints(BonusPoints);
+        SetTimesToBeCompleted(TimesToBeCompleted);
+        _timesAccomplished = TimesAccomplished;
+    }
+
     public void SetBonusPoints(int BonusPoints)
     {
         _bonusPoints = BonusPoints;
@@ -49,6 +56,12 @@ public class ChecklistGoal : Goal
             Checkbox();
         }
         Console.WriteLine($"{GetCheckBox()} {GetName()} ({GetDescription()}) - Currently completed - {_timesAccomplished}/{_timesToBeCompleted}");
+    }
+
+    public override string GetStringRepresentation()
+    {
+        string representation = $"ChecklistGoal:{GetCheckBox()},{GetName()},{GetDescription()},{GetPoints()},{_bonusPoints},{_timesToBeCompleted},{_timesAccomplished}";
+        return representation;
     }
 
 }

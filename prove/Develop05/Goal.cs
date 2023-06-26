@@ -12,6 +12,14 @@ public abstract class Goal
         SetPoints(points);
     }
 
+    public Goal(string name, string description, int points, string checkbox)
+    {
+        SetName(name);
+        SetDescription(description);
+        SetPoints(points);
+        _checkbox = checkbox;
+    }
+
 
     public void SetName(string name)
     {
@@ -51,6 +59,12 @@ public abstract class Goal
     public string GetCheckBox()
     {
         return _checkbox;
+    }
+
+    public virtual string GetStringRepresentation()
+    {
+        string representation = "";
+        return representation;
     }
 
     public virtual void DisplayGoal()
