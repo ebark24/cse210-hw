@@ -82,6 +82,34 @@ class Program
 
             else if (UserInput == "4")
             {
+                Console.WriteLine("What is the filename for the goals file?");
+                string filename = Console.ReadLine();
+                string[] lines = System.IO.File.ReadAllLines(filename);
+                TotalPoints = int.Parse(lines[0]);
+
+                foreach (string line in lines)
+                    {
+                        string[] parts = line.Split("|");
+                        string GoalType = parts[0];
+
+                        if (GoalType == "SimpleGoal")
+                        {
+                            SimpleGoal simpleGoal = new SimpleGoal(parts[2],parts[3],int.Parse(parts[4]),parts[1]);
+                            Goals.Add(simpleGoal);
+                        }
+
+                        if (GoalType == "EternalGoal")
+                        {
+                            EternalGoal eternalGoal = new EternalGoal(parts[2],parts[3],int.Parse(parts[4]),parts[1]);
+                            Goals.Add(eternalGoal);
+                        }
+
+                        if (GoalType == "ChecklistGoal")
+                        {
+                            ChecklistGoal checklistGoal = new ChecklistGoal(parts[2],parts[3],int.Parse(parts[4]),int.Parse(parts[5]),int.Parse(parts[6]), int.Parse(parts[7]));
+                            Goals.Add(checklistGoal);
+                        }
+                    }
 
             }
 

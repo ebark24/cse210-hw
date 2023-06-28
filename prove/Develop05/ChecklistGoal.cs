@@ -67,7 +67,7 @@ public class ChecklistGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        string representation = $"ChecklistGoal:{GetCheckBox()}|{GetName()}|{GetDescription()}|{GetPoints()}|{_bonusPoints}|{_timesToBeCompleted}|{_timesAccomplished}";
+        string representation = $"ChecklistGoal|{GetCheckBox()}|{GetName()}|{GetDescription()}|{GetPoints()}|{_bonusPoints}|{_timesToBeCompleted}|{_timesAccomplished}";
         return representation;
     }
 }

@@ -1,0 +1,4 @@
+1440
+SimpleGoal|[x]|eat|eat panckaes|40
+EternalGoal|[ ]|read|read scriptures everyday|400
+ChecklistGoal|[ ]|Run|run 10 times|500|300|10|2
