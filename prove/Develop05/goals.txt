@@ -1,4 +1,0 @@
-0
-NegativeGoal|[ ]|Dont eat|Don't eat panckes|-400
-EternalGoal|[ ]|Money Bags|Make big  money bags|4000
-SimpleGoal|[ ]|run|runn all day|2340
