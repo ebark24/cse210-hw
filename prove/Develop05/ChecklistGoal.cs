@@ -52,6 +52,7 @@ public class ChecklistGoal : Goal
         {
             PointsEarned += GetBonusPoints();
         }
+        Console.WriteLine($"Congratulations you earned {PointsEarned} points");
         return PointsEarned;
 
     }

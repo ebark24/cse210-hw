@@ -12,6 +12,7 @@ public class SimpleGoal : Goal
     public override int AccomplishTask()
     {
         Checkbox();
+        Console.WriteLine($"Congratulations you earned {GetPoints()} points");
         return GetPoints();
     }
 

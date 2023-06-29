@@ -144,18 +144,8 @@ class Program
                 Console.WriteLine("Which goal did you accomplish?");
                 int GoalAccomplished = int.Parse(Console.ReadLine()) - 1 ;
                 int PointsEarned = Goals[GoalAccomplished].AccomplishTask();
-                Type GoalType = Goals[GoalAccomplished].GetType();
-                if (GoalType is NegativeGoal)
-                {
-                    Console.WriteLine($"Unfortunately you lost {-PointsEarned} points");
-                }
-                else
-                {
-                    Console.WriteLine($"Congratulations you earned {PointsEarned} points");
-                }
                 TotalPoints += PointsEarned;
             }
-
             Console.WriteLine("");
             Console.WriteLine($"You have {TotalPoints} points");
             Console.WriteLine("");

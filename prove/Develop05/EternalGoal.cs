@@ -17,6 +17,7 @@ public class EternalGoal : Goal
 
     public override int AccomplishTask()
     {
+        Console.WriteLine($"Congratulations you earned {GetPoints()} points");
         return GetPoints();
     }
 

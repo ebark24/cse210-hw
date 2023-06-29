@@ -17,6 +17,7 @@ public class NegativeGoal : Goal
 
     public override int AccomplishTask()
     {
+        Console.WriteLine($"Unfortunately you lost {-GetPoints()} points");
         return GetPoints();
     }
 }
