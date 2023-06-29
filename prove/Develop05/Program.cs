@@ -25,35 +25,49 @@ class Program
                 Console.WriteLine("1. Simple Goal");
                 Console.WriteLine("2. Eternal Goal");
                 Console.WriteLine("3. Checklist Goal");
+                Console.WriteLine("4. Negative Goal");
                 Console.WriteLine("Whcih type of goal would you like to create?");
                 string GoalType = Console.ReadLine();
                 Console.WriteLine("What is the name of your goal?");
                 string name = Console.ReadLine();
                 Console.WriteLine("Write a breif description of your goal:");
                 string description = Console.ReadLine();
-                Console.WriteLine("How many points should be assosiated with this goal?");
-                int points = int.Parse(Console.ReadLine());
 
                 if (GoalType == "1")
                     {
+                        Console.WriteLine("How many points should be assosiated with this goal?");
+                        int points = int.Parse(Console.ReadLine());
                         SimpleGoal SimpleGoal = new SimpleGoal(name, description, points);
                         Goals.Add(SimpleGoal);
                     }
 
                 else if (GoalType == "2")
                     {
+                        Console.WriteLine("How many points should be assosiated with this goal?");
+                        int points = int.Parse(Console.ReadLine());
                         EternalGoal EternalGoal = new EternalGoal(name, description, points);
                         Goals.Add(EternalGoal);
                     }
                 
                 else if (GoalType == "3")
                     {
+                        Console.WriteLine("How many points should be assosiated with this goal?");
+                        int points = int.Parse(Console.ReadLine());
                         Console.WriteLine("How many times does this task need to be completed?");
                         int TimesToBeCompleted = int.Parse(Console.ReadLine());
                         Console.WriteLine("How many bonus points should be assosiated with this goal?");
                         int BonusPoints = int.Parse(Console.ReadLine());
                         ChecklistGoal ChecklistGoal = new ChecklistGoal(name, description, points, BonusPoints, TimesToBeCompleted);
                         Goals.Add(ChecklistGoal);
+                    }
+
+                else if (GoalType == "4")
+                    {
+                        Console.WriteLine("How many points should be taken away?");
+                        int points = int.Parse(Console.ReadLine());
+                        points = points * -1;
+                        NegativeGoal NegativeGoal = new NegativeGoal(name, description, points);
+                        Goals.Add(NegativeGoal);
                     }
             }
             
@@ -109,6 +123,12 @@ class Program
                             ChecklistGoal checklistGoal = new ChecklistGoal(parts[2],parts[3],int.Parse(parts[4]),int.Parse(parts[5]),int.Parse(parts[6]), int.Parse(parts[7]));
                             Goals.Add(checklistGoal);
                         }
+
+                        if (GoalType == "NegativeGoal")
+                        {
+                            NegativeGoal negativeGoal = new NegativeGoal(parts[2],parts[3],int.Parse(parts[4]),parts[1]);
+                            Goals.Add(negativeGoal);
+                        }
                     }
 
             }
@@ -124,7 +144,15 @@ class Program
                 Console.WriteLine("Which goal did you accomplish?");
                 int GoalAccomplished = int.Parse(Console.ReadLine()) - 1 ;
                 int PointsEarned = Goals[GoalAccomplished].AccomplishTask();
-                Console.WriteLine($"Congratulations you earned {PointsEarned} points");
+                Type GoalType = Goals[GoalAccomplished].GetType();
+                if (GoalType is NegativeGoal)
+                {
+                    Console.WriteLine($"Unfortunately you lost {-PointsEarned} points");
+                }
+                else
+                {
+                    Console.WriteLine($"Congratulations you earned {PointsEarned} points");
+                }
                 TotalPoints += PointsEarned;
             }
 
