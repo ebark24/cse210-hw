@@ -11,7 +11,9 @@ public class Workout:Task
         if (_duration >= 45)
         {
             CompleteTask();
+            Console.WriteLine("");
             Console.WriteLine("Congratulations you have completed this task!");
+            Console.WriteLine("");
         }
     }
 

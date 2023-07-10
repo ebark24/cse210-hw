@@ -26,7 +26,9 @@ public class Diet:Task
         if (_gramsOfProtienEaten >= _gramsOfProtienRequired)
         {
             CompleteTask();
+            Console.WriteLine("");
             Console.WriteLine("Congratulations you have completed this task!");
+            Console.WriteLine("");
         }
     }
 

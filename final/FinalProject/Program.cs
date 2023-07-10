@@ -55,7 +55,7 @@ class Program
             {
                 Console.Clear();
                 Console.WriteLine("1.Record Workout 1");
-                Console.WriteLine("2.Record Wokrout 2");
+                Console.WriteLine("2.Record Workout 2");
                 string workoutNumber = Console.ReadLine();
                 Console.WriteLine("");
                 Console.WriteLine("What type of workout did you do?");

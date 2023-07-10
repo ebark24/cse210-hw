@@ -11,7 +11,9 @@ public class Reading: Task
         if (_numberOfPagesRead >= _numberOfPagesRequired)
         {
             CompleteTask();
+            Console.WriteLine("");
             Console.WriteLine("Congratulations you have completed this task!");
+            Console.WriteLine("");
         }
     }
     public override void DisplayTask()

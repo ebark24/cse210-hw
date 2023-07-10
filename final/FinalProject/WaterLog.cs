@@ -9,7 +9,9 @@ public class WaterLog:Task
         if (_ozOfWaterDrank >= _ozOfWaterRequired)
         {
             CompleteTask();
+            Console.WriteLine("");
             Console.WriteLine("Congratulations you have completed this task!");
+            Console.WriteLine("");
         }
     }
 

@@ -1,41 +1,73 @@
 public class DailyJournal
 {
+    private List<Task> _allTasks = new List<Task>();
+    private List<Task> _tasksComplete = new List<Task>();
     private Workout _workout1 = new Workout();
     private Workout _workout2 = new Workout();
     private Diet _diet = new Diet();
     private Reading _reading = new Reading();
     private WaterLog _waterLog = new WaterLog();
-    private DateTime _date = DateTime.Now;
-    private bool _overallCompletion = false;
+    private int _numberOfTasksComplete = 0;
+    private DateTime _date = DateTime.Today;
+    private string _overallCompletion = "Incomplete [ ]";
 
     public void SetWorkout1(Workout Workout1)
     {
         _workout1 = Workout1;
+        _allTasks.Add(Workout1);
     }
 
     public void SetWorkout2(Workout Workout2)
     {
         _workout2 = Workout2;
+        _allTasks.Add(Workout2);
     }
 
     public void SetDiet(Diet diet)
     {
         _diet = diet;
+        _allTasks.Add(diet);
     }
 
     public void SetWaterLog(WaterLog waterLog)
     {
         _waterLog = waterLog;
+        _allTasks.Add(waterLog);
     }
 
     public void SetReading(Reading reading)
     {
         _reading = reading;
+        _allTasks.Add(reading);
+    }
+
+    public void UpdateTasksComplete()
+    {
+        foreach (Task task in _allTasks)
+        {
+            if (_tasksComplete.Contains(task))
+            {}
+            else
+            {
+                if (task.GetCompletion() == "Complete [x]")
+                {
+                    _tasksComplete.Add(task);
+                }
+
+            }
+        }
+        _numberOfTasksComplete = _tasksComplete.Count();
+        
+        if (_numberOfTasksComplete >= 5)
+        {
+            _overallCompletion = "Complete [x]";
+        }
     }
 
     public void DispalyDailyJournal()
     {
-        Console.WriteLine(_date);
+        UpdateTasksComplete();
+        Console.WriteLine(_date.ToLongDateString());
         Console.WriteLine("");
         Console.Write($"Workout 1 - {_workout1.GetCompletion()} - ");
         _workout1.DisplayTask();
@@ -50,7 +82,7 @@ public class DailyJournal
         Console.WriteLine("");
         Console.Write($"WaterLog - {_waterLog.GetCompletion()} - ");
         _waterLog.DisplayTask();
-
+        Console.WriteLine("");
+        Console.WriteLine($"Overall Completion - {_overallCompletion} - {_numberOfTasksComplete}/5 Tasks Complete");
     }
- 
 }
