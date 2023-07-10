@@ -11,6 +11,11 @@ public class DailyJournal
     private DateTime _date = DateTime.Today;
     private string _overallCompletion = "Incomplete [ ]";
 
+    public string GetOverallCompletion()
+    {
+        return _overallCompletion;
+    }
+
     public void SetWorkout1(Workout Workout1)
     {
         _workout1 = Workout1;
@@ -66,6 +71,7 @@ public class DailyJournal
 
     public void DispalyDailyJournal()
     {
+        Console.Clear();
         UpdateTasksComplete();
         Console.WriteLine(_date.ToLongDateString());
         Console.WriteLine("");
@@ -84,5 +90,16 @@ public class DailyJournal
         _waterLog.DisplayTask();
         Console.WriteLine("");
         Console.WriteLine($"Overall Completion - {_overallCompletion} - {_numberOfTasksComplete}/5 Tasks Complete");
+    }
+
+    public string GetDailyStringRepresentation()
+    {
+        string DailyStringRepresentation = $"{_date.ToLongDateString()}|{_overallCompletion}|{_numberOfTasksComplete}:";
+        foreach (Task task in _allTasks)
+        {
+            task.SetStringRepreseenation();
+            DailyStringRepresentation += $"{task.GetStringRepresentation()}:";
+        }
+        return DailyStringRepresentation;
     }
 }

@@ -10,8 +10,10 @@ class Program
         Console.WriteLine("What would you like to do?");
         Console.WriteLine("");
         Console.WriteLine("1. Open General Journal");
-        Console.WriteLine("2. Create Daily Entry");
+        Console.WriteLine("2. Open Specific Daily Entry");
+        Console.WriteLine("3. Create Daily Entry");
         string UserEntry = Console.ReadLine();
+        GeneralJournal generalJournal = new GeneralJournal();
         DailyJournal dailyJournal = new DailyJournal();
         Diet diet = new Diet();
         WaterLog waterLog = new WaterLog();
@@ -29,7 +31,7 @@ class Program
 
         }
 
-        while (UserEntry == "2")
+        while (UserEntry == "3")
         {
             Console.Clear();
             Console.WriteLine("What would you like to do?");
@@ -39,6 +41,7 @@ class Program
             Console.WriteLine("3.Record Meals");
             Console.WriteLine("4.Log Water");
             Console.WriteLine("5.Record Reading");
+            Console.WriteLine("6.Add Daily Journal to General Journal and retun to main menu");
             string DJUserEntry = Console.ReadLine();
 
             while (DJUserEntry == "1")
@@ -146,6 +149,12 @@ class Program
                 {
                     DJUserEntry = "";
                 }
+            }
+
+            if (DJUserEntry == "6")
+            {
+                generalJournal.AddDailyJournal(dailyJournal);
+                generalJournal.SaveJournal();
             }
 
         }
