@@ -156,7 +156,6 @@ class Program
                 generalJournal.AddDailyJournal(dailyJournal);
                 generalJournal.SaveJournal();
             }
-
         }
     }
 }
