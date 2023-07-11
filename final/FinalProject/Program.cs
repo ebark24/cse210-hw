@@ -14,6 +14,7 @@ class Program
         Console.WriteLine("3. Create Daily Entry");
         string UserEntry = Console.ReadLine();
         GeneralJournal generalJournal = new GeneralJournal();
+        generalJournal.LoadJournal();
         DailyJournal dailyJournal = new DailyJournal();
         Diet diet = new Diet();
         WaterLog waterLog = new WaterLog();
@@ -28,7 +29,7 @@ class Program
 
         if (UserEntry == "1")
         {
-            generalJournal.LoadJournal();
+            generalJournal.DisplayGeneralJournal();
         }
 
         if (UserEntry == "2")

@@ -38,8 +38,15 @@ public class GeneralJournal
             Reading reading = new Reading(ReadingP[1], ReadingP[2], int.Parse(ReadingP[3]));
             WaterLog waterLog = new WaterLog(WaterLogP[1], int.Parse(WaterLogP[2]));
             DailyJournal dailyJournal = new DailyJournal(DateTime.Parse(DailyinfoP[0]),DailyinfoP[1],workout1,workout2,diet,reading,waterLog, int.Parse(DailyinfoP[2]));
-            dailyJournal.DispalyDailyJournal();
             AddDailyJournal(dailyJournal);
+        }
+    }
+
+    public void DisplayGeneralJournal()
+    {
+        foreach(DailyJournal journal in _generalJournal)
+        {
+            journal.DispalyDailyJournal();
         }
     }
 
