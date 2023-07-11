@@ -28,7 +28,12 @@ class Program
 
         if (UserEntry == "1")
         {
+            generalJournal.LoadJournal();
+        }
 
+        if (UserEntry == "2")
+        {
+            Console.Clear();
         }
 
         while (UserEntry == "3")
