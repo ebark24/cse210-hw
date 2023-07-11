@@ -11,6 +11,21 @@ public class DailyJournal
     private DateTime _date = DateTime.Today;
     private string _overallCompletion = "Incomplete [ ]";
 
+    public DailyJournal()
+    {}
+    public DailyJournal(DateTime date, string overallcompetion, Workout workout1, Workout workout2, Diet diet, Reading reading, WaterLog waterLog, int numberOfTasksComplete)
+    {
+        _date = date;
+        _overallCompletion = overallcompetion;
+        _workout1 = workout1;
+        _workout2 = workout2;
+        _diet = diet;
+        _reading = reading;
+        _waterLog = waterLog;
+        _numberOfTasksComplete = numberOfTasksComplete;
+        UpdateTasksComplete();
+    }
+
     public string GetOverallCompletion()
     {
         return _overallCompletion;

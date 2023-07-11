@@ -4,6 +4,15 @@ public class Reading: Task
     private int _numberOfPagesRead = 0;
     private int _numberOfPagesRequired = 10;
 
+    public Reading(){}
+
+    public Reading(string Completion, string Book, int NumberOfPagesRead)
+    {
+        _completion = Completion;
+        _book = Book;
+        _numberOfPagesRead = NumberOfPagesRead;
+    }
+
     public void RecordReading(string Book, int NumberOfPagesRead)
     {
         _book = Book;

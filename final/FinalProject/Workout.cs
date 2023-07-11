@@ -4,6 +4,15 @@ public class Workout:Task
 
     private int _duration = 0;
 
+    public Workout(){}
+
+    public Workout(string Completion, string TypeOfWorkout, int Duration)
+    {
+        _completion = Completion;
+        _typeOfWorkout = TypeOfWorkout;
+        _duration = Duration;
+    }
+
     public void AddWorkout(string Type, int Duration)
     {
         _typeOfWorkout = Type;

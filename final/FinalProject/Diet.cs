@@ -6,6 +6,17 @@ public class Diet:Task
     private int _gramsOfProtienEaten = 0;
     private int _gramsOfProtienRequired = 120;
 
+    public Diet(){}
+
+    public Diet(string Completion, string Breakfast, string Lunch, string dinner, int GramsOfProtienEaten)
+    {
+        _completion = Completion;
+        _breakfast = Breakfast;
+        _lunch = Lunch;
+        _dinner = dinner;
+        _gramsOfProtienEaten = GramsOfProtienEaten;
+    }
+
     public void SetMeal(string MealType, string Meal, int GramsOfPRotien)
     {
         if (MealType == "1")

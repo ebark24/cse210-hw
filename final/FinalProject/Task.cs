@@ -1,6 +1,6 @@
 public class Task
 {
-    private string _completion = "Incomplete [ ]";
+    protected string _completion = "Incomplete [ ]";
 
     protected string _stringRepresentation = "";
 

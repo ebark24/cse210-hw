@@ -3,6 +3,14 @@ public class WaterLog:Task
     private int _ozOfWaterDrank = 0;
     private int _ozOfWaterRequired = 128;
 
+    public WaterLog(){}
+
+    public WaterLog(string Completion, int OzOfWaterDrank)
+    {
+        _completion = Completion;
+        _ozOfWaterDrank = OzOfWaterDrank;
+    }
+
     public void RecordDrinking(int OzOfWaterDrank)
     {
         _ozOfWaterDrank += OzOfWaterDrank;
