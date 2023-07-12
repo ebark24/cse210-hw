@@ -14,17 +14,6 @@ class Program
         string UserEntry = Console.ReadLine();
         GeneralJournal generalJournal = new GeneralJournal();
         generalJournal.LoadJournal();
-        DailyJournal dailyJournal = new DailyJournal();
-        Diet diet = new Diet();
-        WaterLog waterLog = new WaterLog();
-        Reading reading = new Reading();
-        Workout workout1 = new Workout();
-        Workout workout2 = new Workout();
-        dailyJournal.SetDiet(diet);
-        dailyJournal.SetWaterLog(waterLog);
-        dailyJournal.SetReading(reading);
-        dailyJournal.SetWorkout1(workout1);
-        dailyJournal.SetWorkout2(workout2);
 
         while (UserEntry == "1")
         {
@@ -52,6 +41,22 @@ class Program
                 Console.ReadLine();
             }
         }
+
+        if(UserEntry == "2")
+        {
+            DailyJournal dailyJournal = new DailyJournal();
+            Diet diet = new Diet();
+            WaterLog waterLog = new WaterLog();
+            Reading reading = new Reading();
+            Workout workout1 = new Workout();
+            Workout workout2 = new Workout();
+            dailyJournal.SetDiet(diet);
+            dailyJournal.SetWaterLog(waterLog);
+            dailyJournal.SetReading(reading);
+            dailyJournal.SetWorkout1(workout1);
+            dailyJournal.SetWorkout2(workout2);
+
+        
 
         while (UserEntry == "2")
         {
@@ -178,6 +183,7 @@ class Program
                 generalJournal.AddDailyJournal(dailyJournal);
                 generalJournal.SaveJournal();
             }
+        }
         }
     }
 }

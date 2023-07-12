@@ -17,11 +17,11 @@ public class DailyJournal
     {
         _date = date;
         _overallCompletion = overallcompetion;
-        _workout1 = workout1;
-        _workout2 = workout2;
-        _diet = diet;
-        _reading = reading;
-        _waterLog = waterLog;
+        SetDiet(diet);
+        SetWaterLog(waterLog);
+        SetReading(reading);
+        SetWorkout1(workout1);
+        SetWorkout2(workout2);
         _numberOfTasksComplete = numberOfTasksComplete;
         UpdateTasksComplete();
     }
