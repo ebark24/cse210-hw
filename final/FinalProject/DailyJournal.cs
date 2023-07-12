@@ -55,6 +55,12 @@ public class DailyJournal
         _allTasks.Add(waterLog);
     }
 
+    public void DisplayDateAndCompletion()
+    {
+        UpdateTasksComplete();
+        Console.WriteLine($"{_date.ToLongDateString()} - {_overallCompletion}");
+    }
+
     public void SetReading(Reading reading)
     {
         _reading = reading;

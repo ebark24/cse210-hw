@@ -50,6 +50,19 @@ public class GeneralJournal
         }
     }
 
+    public void DisplayDateList()
+    {
+        for(int i = 0; i < _generalJournal.Count(); i++)
+        {
+            Console.Write($"{i+1}.");
+            _generalJournal[i].DisplayDateAndCompletion();
+        }
+        Console.WriteLine("Which Date would you like to look at?");
+        int DJDate = int.Parse(Console.ReadLine()) - 1;
+        Console.Clear();
+        _generalJournal[DJDate].DispalyDailyJournal();
+    }
+
 
     public void UpdateDaysComplete()
     {
