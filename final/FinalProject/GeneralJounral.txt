@@ -1,2 +1,3 @@
 Monday, July 10, 2023|Incomplete [ ]|0:Diet|Incomplete [ ]|none|none|none|0:WaterLog|Incomplete [ ]|0:Reading|Incomplete [ ]|N/A|0:Workout|Incomplete [ ]|N/A|0:Workout|Incomplete [ ]|N/A|0:
-Wednesday, July 12, 2023|Complete [x]|5:Diet|Complete [x]|none|Chicken and rice|Steak and Potatos|130:WaterLog|Complete [x]|190:Reading|Complete [x]|BOM|12:Workout|Complete [x]|Cardio|56:Workout|Complete [x]|Rock Climbing|75:
+Tuesday, July 11, 2023|Complete [x]|5:Diet|Complete [x]|none|Chicken and rice|Steak and Potatos|130:WaterLog|Complete [x]|190:Reading|Complete [x]|BOM|12:Workout|Complete [x]|Cardio|56:Workout|Complete [x]|Rock Climbing|75:
+Wednesday, July 12, 2023|Complete [x]|5:Diet|Complete [x]|none|Eggs|Chicken and rice|235:WaterLog|Complete [x]|150:Reading|Complete [x]|BOM|12:Workout|Complete [x]|Cardio|65:Workout|Complete [x]|Rock climbing|45:

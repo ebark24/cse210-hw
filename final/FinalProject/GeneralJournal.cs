@@ -59,6 +59,9 @@ public class GeneralJournal
             Console.Write($"{i+1}.");
             _generalJournal[i].DisplayDateAndCompletion();
         }
+        UpdateDaysComplete();
+        Console.WriteLine("");
+        Console.WriteLine($"{_daysComplete}/75 Days Complete");
         Console.WriteLine("");
         int DJDate = int.Parse(Console.ReadLine()) - 1;
         Console.Clear();
