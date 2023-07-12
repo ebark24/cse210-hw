@@ -4,6 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
+        int menu = 0;
+        while (menu == 0)
+        {
         Console.Clear();
         Console.WriteLine("Welcome to the 75 Hard Tracker");
         Console.WriteLine("");
@@ -11,34 +14,28 @@ class Program
         Console.WriteLine("");
         Console.WriteLine("1. Open General Journal");
         Console.WriteLine("2. Create Daily Entry");
+        Console.WriteLine("3. Close Menu");
         string UserEntry = Console.ReadLine();
         GeneralJournal generalJournal = new GeneralJournal();
         generalJournal.LoadJournal();
 
+        if (UserEntry == "3")
+        {
+            menu = 1;
+        }
+
         while (UserEntry == "1")
         {
             Console.Clear();
-            Console.WriteLine("What would you like to do?");
             Console.WriteLine("");
-            Console.WriteLine("1.Display all Daily Entries");
-            Console.WriteLine("2.Pick a specific date to look at");
-            Console.WriteLine("3.Return to Main Menu");
-            string GJUserEntry = Console.ReadLine();
-            if (GJUserEntry == "1")
+            generalJournal.DisplayDateList();
+            Console.WriteLine("");
+            Console.WriteLine("1.Pick another day to look at");
+            Console.WriteLine("2.Return to Main menu");
+            string GJUserEnty =  Console.ReadLine();
+            if (GJUserEnty == "2")
             {
-                Console.Clear();
-                generalJournal.DisplayGeneralJournal();
-                Console.WriteLine("");
-                Console.WriteLine("Press enter to return to General Journal Menu");
-                Console.ReadLine();
-            }
-
-            if (GJUserEntry == "2")
-            {
-                Console.Clear();
-                generalJournal.DisplayDateList();
-                Console.WriteLine("Press Enter to return to General Journal Menu");
-                Console.ReadLine();
+                UserEntry = "0";
             }
         }
 
@@ -182,7 +179,9 @@ class Program
             {
                 generalJournal.AddDailyJournal(dailyJournal);
                 generalJournal.SaveJournal();
+                UserEntry = "";
             }
+        }
         }
         }
     }

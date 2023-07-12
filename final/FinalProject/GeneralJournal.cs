@@ -52,14 +52,17 @@ public class GeneralJournal
 
     public void DisplayDateList()
     {
+        Console.WriteLine("Which day would you like to look at?");
+        Console.WriteLine("");
         for(int i = 0; i < _generalJournal.Count(); i++)
         {
             Console.Write($"{i+1}.");
             _generalJournal[i].DisplayDateAndCompletion();
         }
-        Console.WriteLine("Which Date would you like to look at?");
+        Console.WriteLine("");
         int DJDate = int.Parse(Console.ReadLine()) - 1;
         Console.Clear();
+        Console.WriteLine("");
         _generalJournal[DJDate].DispalyDailyJournal();
     }
 

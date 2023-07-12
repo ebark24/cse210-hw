@@ -100,16 +100,12 @@ public class DailyJournal
         _workout1.DisplayTask();
         Console.Write($"Workout 2 - {_workout2.GetCompletion()} - ");
         _workout2.DisplayTask();
-        Console.WriteLine("");
         Console.Write($"Diet - {_diet.GetCompletion()} - ");
         _diet.DisplayTask();
-        Console.WriteLine("");
         Console.Write($"Reading - {_reading.GetCompletion()} - ");
         _reading.DisplayTask();
-        Console.WriteLine("");
         Console.Write($"WaterLog - {_waterLog.GetCompletion()} - ");
         _waterLog.DisplayTask();
-        Console.WriteLine("");
         Console.WriteLine($"Overall Completion - {_overallCompletion} - {_numberOfTasksComplete}/5 Tasks Complete");
     }
 

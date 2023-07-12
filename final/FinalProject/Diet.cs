@@ -45,9 +45,7 @@ public class Diet:Task
 
     public override void DisplayTask()
     {
-        Console.WriteLine("Your diet for the day consisted of the following:");
-        Console.WriteLine($"Breakfast - {_breakfast}, Lunch - {_lunch}, Dinner - {_dinner}");
-        Console.WriteLine($"You had {_gramsOfProtienEaten} grams of protien out of {_gramsOfProtienRequired} required");
+        Console.WriteLine($"{_gramsOfProtienEaten}/{_gramsOfProtienRequired} grams of protien required. Your diet for the day consisted of the following: Breakfast - {_breakfast}, Lunch - {_lunch}, Dinner - {_dinner}");
     }
 
     public override void SetStringRepreseenation()
